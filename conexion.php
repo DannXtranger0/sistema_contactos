@@ -1,12 +1,7 @@
 <?php
-$dsn = 'mysql:host=localhost;dbname=sistema_de_contactos';
-$usuario = 'root';
-$contrasenia = '';
-
 try {
-    $conexion = new PDO($dsn, $usuario, $contrasenia);
-    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $conn = new PDO("mysql:host=localhost;dbname=sistema_contactos","root","");
+  
 } catch (PDOException $e) {
-    echo 'Error de conexión: ' . $e->getMessage();
-    die();
+  die("PDO Connection Error: " . $e->getMessage());
 }
